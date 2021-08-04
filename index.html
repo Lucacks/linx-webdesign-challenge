@@ -18,93 +18,46 @@
     <div class="container">
         <header>
             <h1 class="title">Tarefas a fazer</h1>
-            <h3 class="subtitle">Adicione e complete tarefas para organizar melhor sua semana</h3>
         </header>
+        <h3 class="subtitle">Adicione e complete tarefas para organizar melhor sua semana. :)</h3>
 
         <main>
             <div class="search-box">
-                <input type="tel" name="search" id="search-bar">
-                <button type="button">Buscar</button>
-                <label for="organize">
-                    Organizar por:
-                    <select name="organize" id="category-box">
-                        <option value="filter" disabled>Filtro</option>
+                <form action="" class="search-form">
+                    <input type="tel" name="search" id="search-bar" placeholder="Busque tarefas">
+                    <button type="button">Buscar</button>
+                </form>
+                <div class="organize-group">
+                    <label for="organize">Organizar por:</label>                    
+                    <select name="organize" id="organize">
+                        <option value="filter" disabled selected>Filtro</option>
                         <option value="name">Nome</option>
                         <option value="term">Prazo</option>
                         <option value="included">Inclusão</option>
                     </select>
-                </label>
+
+                </div>
             </div>
 
             <div class="task-container">
                 <div class="task-box">
-                    <!-- <div id="short-deadline">
+                    <div id="short-deadline">
                         <p>Prazo curto!</p>
                     </div>
-                    <div id="task-late">
+                    <!-- <div id="task-late">
                         <p>Atrasado! ):</p>
                     </div> -->
 
-                    <img src="" alt="">
+                    <img src="assets/task-image.png" alt="Task image">
                     <div class="task-content">
-                        <h2 class="task-title">Nome da tarefa</h2>
-                        <p class="description">Descrição da tarefa, o que deve ser feito e muitas informações que
-                            explicam melhor do que se trata.</p>
-                        <p class="term">Prazo: <strong>00/00</strong></p>
-
-                        <button class="complete">Concluir</button>
-                        <p class="included">Data de inclusão: há 2 semanas</p>
-                    </div>
-                </div>
-                <div class="task-box">
-                    <!-- <div id="short-deadline">
-                        <p>Prazo curto!</p>
-                    </div>
-                    <div id="task-late">
-                        <p>Atrasado! ):</p>
-                    </div> -->
-
-                    <img src="" alt="">
-                    <div class="task-content">
-                        <h2 class="task-title">Nome da tarefa</h2>
-                        <p class="description">Descrição da tarefa, o que deve ser feito e muitas informações que
-                            explicam melhor do que se trata.</p>
-                        <p class="term">Prazo: <strong>00/00</strong></p>
-
-                        <button class="complete">Concluir</button>
-                        <p class="included">Data de inclusão: há 2 semanas</p>
-                    </div>
-                </div>
-                <div class="task-box">
-                    <!-- <div id="short-deadline">
-                        <p>Prazo curto!</p>
-                    </div>
-                    <div id="task-late">
-                        <p>Atrasado! ):</p>
-                    </div> -->
-
-                    <img src="" alt="">
-                    <div class="task-content">
-                        <h2 class="task-title">Nome da tarefa</h2>
-                        <p class="description">Descrição da tarefa, o que deve ser feito e muitas informações que
-                            explicam melhor do que se trata.</p>
-                        <p class="term">Prazo: <strong>00/00</strong></p>
-
-                        <button class="complete">Concluir</button>
-                        <p class="included">Data de inclusão: há 2 semanas</p>
-                    </div>
-                </div>
-                <div class="task-box">
-                    <!-- <div id="short-deadline">
-                        <p>Prazo curto!</p>
-                    </div>
-                    <div id="task-late">
-                        <p>Atrasado! ):</p>
-                    </div> -->
-
-                    <img src="" alt="">
-                    <div class="task-content">
-                        <h2 class="task-title">Nome da tarefa</h2>
+                        <div class="task-title">
+                            <h2>Nome da tarefa</h2>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 18.3051C14.5868 18.3051 18.3051 14.5868 18.3051 10C18.3051 5.41323 14.5868 1.69492 10 1.69492C5.41323 1.69492 1.69492 5.41323 1.69492 10C1.69492 14.5868 5.41323 18.3051 10 18.3051ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#F04837"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.8983 4.82345H10.2542V10.4167H15V11.7726H8.8983V4.82345Z" fill="#F04837"/>
+                                </svg>
+                                
+                        </div>
                         <p class="description">Descrição da tarefa, o que deve ser feito e muitas informações que
                             explicam melhor do que se trata.</p>
                         <p class="term">Prazo: <strong>00/00</strong></p>
@@ -114,10 +67,12 @@
                     </div>
                 </div>
 
-                <button type="button">Ver mais +</button>
-            </div>
+                <button type="button" class="see-more">Ver mais +</button>
 
-            <svg width="157" height="94" viewBox="0 0 157 94" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </div>                
+
+
+            <svg class="linx-logo" width="157" height="94" viewBox="0 0 157 94" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="157" height="94" fill="url(#pattern0)"/>
                 <defs>
                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -129,11 +84,11 @@
 
             <p class="linx-about">
                 A Linx é uma empresa brasileira especialista em tecnologia para o varejo. Líder no mercado de software
-                de gestão, com 45,6% de market share do mercado varejista, conforme atesta o IDC. <br>
+                de gestão, com 45,6% de market share do mercado varejista, conforme atesta o IDC. <br><br>
 
                 Toda a expertise da Linx na jornada de compra é transformada em insights fundamentais para atingir o que
                 os varejistas mais esperam: fidelizar seus consumidores e atingir resultados concretos e relevantes.
-                <br>
+                <br><br>
 
                 Com capital aberto na B3 desde 2013, a Linx também se tornou a primeira empresa brasileira de software
                 com capital aberto na NYSE, em 2019. A empresa possui mais de 3,5 mil colaboradores distribuídos entre

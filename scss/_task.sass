@@ -1,0 +1,92 @@
+.task-container
+        width: 94.5%
+        @include flexbox(column, center, center)     
+
+        .task-box
+            @include flexbox(initial, center, center)
+            border: 1px solid $dark-color
+            border-radius: 14px
+            padding: 16px 12px
+            margin-bottom: 24px
+
+            position: relative
+
+            #short-deadline, #task-late
+                background: $secondary-color
+                position: absolute
+                left: -5px
+                top: 20px
+
+                font-size: 1.2rem
+                font-weight: 700
+                color: $white-color
+
+                padding: 6px 12px 6px 22px
+                border-radius: 0 5px 5px 0
+
+            #task-late
+                background: $attention-color
+
+        
+        .task-content
+            @include flexbox(column, center, left)
+            margin-left: 13px
+
+            .task-title
+                width: 100%
+                @include flexbox(row, space-between, center)                
+
+                h2
+                    font-size: 1.4rem
+                    font-weight: 600
+                    color: $gray-color
+                
+            .description
+                font-size: 1.1rem
+                font-weight: 400
+                margin: 5px 0 7px
+
+            .term
+                font-size: 1.2rem
+                font-weight: 700
+                
+                strong
+                    font-size: 1.8rem
+                    font-weight: 700
+                    color: $attention-color
+
+            .complete
+                width: 100%
+                background: none
+                border: 1px solid $secondary-color
+                border-radius: 8px
+
+                font-size: 1.6rem
+                font-weight: 700
+                color: $secondary-color
+                
+                margin: 7px 0 6px
+                
+                transition: .6s
+
+                &:hover
+                    background: $secondary-color
+                    color: $white-color
+
+            .included
+                font-size: 1rem
+
+        .see-more
+            background: $purple-color
+            border: none
+            border-radius: 8px
+
+            padding: 10px 32px
+            margin-top: 23px
+
+            font-size: 1.6rem
+            font-weight: 600
+            color: $white-color
+            letter-spacing: .1rem
+            text-transform: uppercase
+

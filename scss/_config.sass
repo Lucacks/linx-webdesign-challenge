@@ -1,0 +1,26 @@
+$white-color: #FFFFFF
+$dark-color: #000000
+$gray-color: #414141
+$secondary-color: #422755
+$purple-color: #6E4B87
+$attention-color: #F04837
+$yellow-color: #FEAF3D;
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font-size: 62.5%
+
+body, input, button, option
+    font-family: 'Open Sans', sans-serif;
+
+
+
+@mixin flexbox($directionValue, $justifyValue, $alignValue) 
+    display: flex;
+    flex-direction: $directionValue
+    justify-content: $justifyValue
+    align-items: $alignValue
