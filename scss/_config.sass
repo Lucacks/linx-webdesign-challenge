@@ -1,9 +1,12 @@
 $white-color: #FFFFFF
 $dark-color: #000000
 $gray-color: #414141
+$light-gray-color: #E5E5E5
+$dark-gray-color: #757575
 $secondary-color: #422755
 $purple-color: #6E4B87
 $attention-color: #F04837
+$attention-hover: #BE200E
 $yellow-color: #FEAF3D;
 
 *
@@ -18,9 +21,26 @@ body, input, button, option
     font-family: 'Open Sans', sans-serif;
 
 
-
 @mixin flexbox($directionValue, $justifyValue, $alignValue) 
     display: flex;
     flex-direction: $directionValue
     justify-content: $justifyValue
     align-items: $alignValue
+
+@mixin fontConfig($fontSize, $fontWeight, $fontColor)
+    font-size: $fontSize
+    font-weight: $fontWeight
+    color: $fontColor
+
+@mixin mediaSmall
+    @media screen and (min-width: 541px)
+        @content
+        
+@mixin mediaMedium
+    @media screen and (min-width: 768px)
+        @content
+
+@mixin mediaLarge
+    @media screen and (min-width: 1100px)
+        @content
+        

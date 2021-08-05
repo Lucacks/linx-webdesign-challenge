@@ -7,4 +7,6 @@ Passos para completar o desafio:
 - [x] HTML pronto;
 - [x] Utilização do Sass
 - [x] Estilização pronta
+- [x] Responsividade pronta
+- [x] Pequenos ajustes e melhorias
 - [ ] Completar Readme

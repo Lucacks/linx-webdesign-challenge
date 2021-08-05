@@ -32,11 +32,11 @@ header .title {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #422755;
-  height: 170px;
   font-size: 2.4rem;
   font-weight: 800;
   color: #FFFFFF;
+  height: 160px;
+  background: #422755;
 }
 
 header .title::before {
@@ -52,12 +52,16 @@ header .title::before {
 }
 
 .subtitle {
-  width: 75.5%;
   font-size: 1.6rem;
   font-weight: 400;
   color: #422755;
+  width: 75.5%;
   text-align: center;
-  margin-top: 20px;
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .container {
@@ -93,8 +97,7 @@ main {
           align-items: center;
 }
 
-main .task-container {
-  width: 94.5%;
+main .search-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,6 +111,101 @@ main .task-container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 95.5%;
+  max-width: 1080px;
+  border-radius: 8px;
+  padding: 30px 0;
+  margin: 110px 0 37px;
+  background: #FEAF3D;
+}
+
+main .search-box .search-form {
+  width: 90%;
+  max-width: 311px;
+  position: relative;
+}
+
+main .search-box .search-form input {
+  width: 100%;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  padding-left: 16px;
+}
+
+main .search-box .search-form button {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #6E4B87;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 11px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+main .search-box .search-form button:hover {
+  background: #422755;
+}
+
+main .search-box .organize-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 19px;
+  width: 90%;
+  max-width: 311px;
+}
+
+main .search-box label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+main .search-box #organize {
+  background: #FFFFFF;
+  width: 190px;
+  height: 34px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 8px;
+  padding-left: 29px;
+}
+
+main .task-container {
+  width: 94.5%;
+  max-width: 1180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .task-container .task-box {
@@ -118,33 +216,48 @@ main .task-container .task-box {
   -webkit-box-direction: initial;
       -ms-flex-direction: initial;
           flex-direction: initial;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 340px;
+  background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 14px;
   padding: 16px 12px;
-  margin-bottom: 24px;
+  margin: 0 12px 24px;
+  cursor: pointer;
   position: relative;
 }
 
 main .task-container .task-box #short-deadline, main .task-container .task-box #task-late {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
   background: #422755;
   position: absolute;
   left: -5px;
   top: 20px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #FFFFFF;
   padding: 6px 12px 6px 22px;
   border-radius: 0 5px 5px 0;
 }
 
 main .task-container .task-box #task-late {
   background: #F04837;
+}
+
+main .task-container .task-box .img-mask {
+  overflow: hidden;
+}
+
+main .task-container .task-box .larg-buttons {
+  display: none;
+}
+
+main .task-container .task-box:nth-child(n+5) {
+  display: none;
 }
 
 main .task-container .task-content {
@@ -161,6 +274,7 @@ main .task-container .task-content {
   -webkit-box-align: left;
       -ms-flex-align: left;
           align-items: left;
+  min-width: 170px;
   margin-left: 13px;
 }
 
@@ -190,12 +304,16 @@ main .task-container .task-content .task-title h2 {
 main .task-container .task-content .description {
   font-size: 1.1rem;
   font-weight: 400;
+  color: #000000;
   margin: 5px 0 7px;
+  min-height: 50px;
+  overflow: hidden;
 }
 
 main .task-container .task-content .term {
   font-size: 1.2rem;
   font-weight: 700;
+  color: #000000;
 }
 
 main .task-container .task-content .term strong {
@@ -204,17 +322,25 @@ main .task-container .task-content .term strong {
   color: #F04837;
 }
 
+main .task-container .task-content .term small {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #F04837;
+  margin-left: 13px;
+}
+
 main .task-container .task-content .complete {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #422755;
   width: 100%;
   background: none;
   border: 1px solid #422755;
   border-radius: 8px;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #422755;
   margin: 7px 0 6px;
   -webkit-transition: .6s;
   transition: .6s;
+  cursor: pointer;
 }
 
 main .task-container .task-content .complete:hover {
@@ -223,23 +349,31 @@ main .task-container .task-content .complete:hover {
 }
 
 main .task-container .task-content .included {
+  margin-top: 5px;
   font-size: 1rem;
 }
 
-main .task-container .see-more {
+main .see-more {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #FFFFFF;
   background: #6E4B87;
   border: none;
   border-radius: 8px;
   padding: 10px 32px;
   margin-top: 23px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #FFFFFF;
   letter-spacing: .1rem;
   text-transform: uppercase;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
 }
 
-main .search-box {
+main .see-more:hover {
+  background: #422755;
+}
+
+main .newsletter-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,44 +384,24 @@ main .search-box {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 95.5%;
-  height: 146px;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  display: none;
+  width: 876px;
+  background: #E5E5E5;
   border-radius: 8px;
-  margin: 45px 0 37px;
-  background: #FEAF3D;
+  padding: 22px 45px;
+  margin-top: 140px;
 }
 
-main .search-box .search-form {
-  width: 90%;
-  position: relative;
-}
-
-main .search-box .search-form input {
-  width: 100%;
-  height: 34px;
-  border: none;
-  border-radius: 8px;
-  padding-left: 16px;
-}
-
-main .search-box .search-form button {
-  background: #6E4B87;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 11px;
-  position: absolute;
-  top: 0;
-  right: 0;
+main .newsletter-container h2 {
   font-size: 1.4rem;
-  font-weight: 600;
-  color: #FFFFFF;
-  cursor: pointer;
+  font-weight: 700;
+  color: #6E4B87;
 }
 
-main .search-box .organize-group {
+main .newsletter-container .submit-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,36 +415,82 @@ main .search-box .organize-group {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 19px;
-  width: 90%;
 }
 
-main .search-box label {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #FFFFFF;
+main .newsletter-container .submit-container .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 42%;
+  margin-top: 7px;
 }
 
-main .search-box #organize {
-  background: #FFFFFF;
-  width: 193px;
+main .newsletter-container .submit-container .input-container label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #757575;
+  margin-bottom: 2px;
+  margin-left: 5px;
+}
+
+main .newsletter-container .submit-container .input-container input {
   height: 34px;
-  margin-left: 20px;
   border: none;
   border-radius: 8px;
-  padding-left: 29px;
+  padding-left: 16px;
 }
 
-main .linx-logo {
+main .newsletter-container .submit-container button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: #6E4B87;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 11px;
+  margin-top: 25px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  cursor: pointer;
+}
+
+main .newsletter-container .submit-container button:hover {
+  background: #422755;
+}
+
+main .linx-about-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 64px;
 }
 
-main .linx-about {
-  width: 85.8%;
+main .linx-about-container .linx-about {
   font-size: 1.2rem;
   font-weight: 400;
-  text-align: center;
   color: #414141;
+  width: 85.8%;
+  text-align: center;
   margin: 45px 0;
 }
 
@@ -370,7 +530,208 @@ footer {
 
 footer p {
   font-size: 1.2rem;
+  font-weight: 400;
   color: #FFFFFF;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  header .title {
+    font-size: 3.6rem;
+  }
+  header .subtitle {
+    top: 115%;
+  }
+  main .task-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  main .task-container .task-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 253px;
+    min-height: 390px;
+  }
+  main .task-container .task-box .img-mask {
+    width: 218px;
+    height: 183px;
+    overflow: hidden;
+    margin-bottom: 11px;
+  }
+  main .task-container .task-box .img-mask img {
+    height: auto;
+  }
+  main .task-container .task-box svg {
+    display: none;
+  }
+  main .search-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 90px 0 71px;
+  }
+  main .search-box .organize-group {
+    margin-top: 0;
+  }
+  main .linx-about-container {
+    width: 90%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main .linx-about-container .linx-logo {
+    width: 234px;
+  }
+  main .linx-about-container .linx-about {
+    margin-left: 30px;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  /** Header responsive **/
+  header .title {
+    height: 380px;
+    padding-bottom: 90px;
+  }
+  header .subtitle {
+    color: #FFFFFF;
+    top: 52%;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    top: 86.5%;
+    left: 0;
+    width: 100%;
+    height: 53px;
+    background: #FFFFFF;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 50%);
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 50%);
+  }
+  header .subtitle {
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    bottom: 40%;
+  }
+  /** End header responsive **/
+  main .task-container .task-box {
+    min-height: 360px;
+  }
+  main .task-container .task-box .task-content .complete {
+    display: none;
+  }
+  main .task-container .task-box .task-content .content {
+    font-size: 1.2rem;
+  }
+  main .task-container .task-box:hover {
+    display: column;
+  }
+  main .task-container .task-box:hover .larg-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    width: 95%;
+    margin-top: 23px;
+  }
+  main .task-container .task-box:hover .larg-buttons .complete-btn, main .task-container .task-box:hover .larg-buttons .change-time {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    width: 100%;
+    background: #6E4B87;
+    padding: 9px 0;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transition: .6s;
+    transition: .6s;
+  }
+  main .task-container .task-box:hover .larg-buttons .complete-btn:hover, main .task-container .task-box:hover .larg-buttons .change-time:hover {
+    background: #422755;
+  }
+  main .task-container .task-box:hover .larg-buttons .change-time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #F04837;
+    margin-bottom: 0;
+  }
+  main .task-container .task-box:hover .larg-buttons .change-time .material-icons {
+    margin-right: 10px;
+  }
+  main .task-container .task-box:hover .larg-buttons .change-time:hover {
+    background: #BE200E;
+  }
+  main .task-container .task-box:nth-child(n+5) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main .search-box {
+    margin-top: 40px;
+  }
+  main .newsletter-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main .linx-about-container {
+    max-width: 1080px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  main .linx-about-container .linx-about {
+    font-size: 1.4rem;
+    margin-left: 30px;
+    text-align: left;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,15 +1,17 @@
 .search-box
     @include flexbox(column, center, center)
     width: 95.5%
-    height: 146px
+    max-width: 1080px
     border-radius: 8px
 
-    margin: 45px 0 37px
+    padding: 30px 0
+    margin: 110px 0 37px
 
     background: $yellow-color
 
     .search-form
         width: 90%
+        max-width: 311px
         position: relative
 
         input
@@ -21,6 +23,7 @@
             padding-left: 16px 
 
         button
+            @include fontConfig(1.4rem, 600, $white-color)
             background: $purple-color
             border: none
             border-radius: 8px
@@ -31,25 +34,25 @@
             top: 0
             right: 0
 
-            font-size: 1.4rem
-            font-weight: 600
-            color: $white-color
-
+            transition: .6s
             cursor: pointer
+
+            &:hover
+                background: $secondary-color
+            
 
     .organize-group
         @include flexbox(row, space-between, center)
         margin-top: 19px
         width: 90%
+        max-width: 311px
 
     label
-        font-size: 1.4rem
-        font-weight: 600
-        color: $white-color
+        @include fontConfig(1.4rem, 600, $white-color)
 
     #organize
         background: $white-color
-        width: 193px
+        width: 190px
         height: 34px
 
         margin-left: 20px

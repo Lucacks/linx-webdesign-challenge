@@ -1,0 +1,145 @@
+@include mediaMedium
+    header
+        .title
+            font-size: 3.6rem
+        .subtitle
+            top: 115%
+    
+    
+    main       
+        .task-container
+            @include flexbox(row, center, flex-start)
+            flex-wrap: wrap
+            .task-box
+                flex-direction: column 
+                max-width: 253px
+                min-height: 390px
+
+                .img-mask
+                    width: 218px
+                    height: 183px
+                    
+                    overflow: hidden
+                    margin-bottom: 11px
+
+                    img
+                        height: auto
+
+                svg
+                    display: none
+                
+
+        .search-box
+            @include flexbox(row, space-evenly, center)
+            margin: 90px 0 71px
+
+            .organize-group
+                margin-top: 0
+
+        .linx-about-container
+            width: 90%
+            flex-direction: row
+
+            .linx-logo
+                width: 234px
+
+            .linx-about
+                margin-left: 30px
+                text-align: left
+
+@include mediaLarge
+
+    /** Header responsive **/
+    header
+        .title
+            height: 380px
+            padding-bottom: 90px
+        .subtitle
+            color: $white-color
+            top: 52%
+
+
+        &::after
+            content: ''
+            position: absolute
+            top: 86.5%
+            left: 0
+            width: 100%
+            height: 53px
+            background: $white-color
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 50%);
+
+                
+        .subtitle
+            font-size: 1.8rem
+            color: $white-color
+            bottom: 40%
+    /** End header responsive **/
+        
+    main
+        .task-container
+            .task-box  
+                min-height: 360px
+
+                .task-content
+                    .complete
+                        display: none
+
+                    .content
+                        font-size: 1.2rem
+
+                &:hover
+                    display: column
+                    .larg-buttons
+                        @include flexbox(column, center, left)
+                        width: 95% 
+                        margin-top: 23px
+
+                        .complete-btn, .change-time
+                            @include fontConfig(1.6rem, 700, $white-color)
+                            width: 100%
+                            background: $purple-color
+
+                            padding: 9px 0
+                            margin-bottom: 8px
+
+                            border: none
+                            border-radius: 8px
+
+                            cursor: pointer
+                            transition: .6s
+
+                            &:hover
+                                background: $secondary-color
+
+                        .change-time
+                            @include flexbox(row, center, center)
+                            background: $attention-color
+                            margin-bottom: 0
+
+                            .material-icons
+                                margin-right: 10px
+
+                            &:hover
+                                background: $attention-hover     
+                
+                &:nth-child(n+5)
+                    display: flex
+
+
+                
+
+        .search-box
+            margin-top: 40px
+
+        .newsletter-container
+            display: flex
+
+        .linx-about-container            
+            max-width: 1080px
+            justify-content: space-around
+
+            .linx-about
+                font-size: 1.4rem
+                margin-left: 30px
+                text-align: left

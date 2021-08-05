@@ -1,25 +1,29 @@
 .task-container
         width: 94.5%
-        @include flexbox(column, center, center)     
+        max-width: 1180px
+        @include flexbox(column, center, center)
+        flex-wrap: wrap
 
         .task-box
-            @include flexbox(initial, center, center)
+            @include flexbox(initial, flex-start, center)
+            max-width: 340px
+
+            background: $white-color
             border: 1px solid $dark-color
             border-radius: 14px
-            padding: 16px 12px
-            margin-bottom: 24px
 
-            position: relative
+            padding: 16px 12px
+            margin: 0 12px 24px
+
+            cursor: pointer
+            position: relative            
 
             #short-deadline, #task-late
+                @include fontConfig(1.2rem, 700, $white-color)
                 background: $secondary-color
                 position: absolute
                 left: -5px
                 top: 20px
-
-                font-size: 1.2rem
-                font-weight: 700
-                color: $white-color
 
                 padding: 6px 12px 6px 22px
                 border-radius: 0 5px 5px 0
@@ -27,9 +31,21 @@
             #task-late
                 background: $attention-color
 
+            .img-mask
+                overflow: hidden
+
+            .larg-buttons
+                display: none
+
+            &:nth-child(n+5)
+                display: none
+
+            
+
         
         .task-content
             @include flexbox(column, center, left)
+            min-width: 170px
             margin-left: 13px
 
             .task-title
@@ -37,56 +53,62 @@
                 @include flexbox(row, space-between, center)                
 
                 h2
-                    font-size: 1.4rem
-                    font-weight: 600
-                    color: $gray-color
+                    @include fontConfig(1.4rem, 600, $gray-color)
                 
             .description
-                font-size: 1.1rem
-                font-weight: 400
+                @include fontConfig(1.1rem, 400, $dark-color)
                 margin: 5px 0 7px
+                
+                min-height: 50px
+                overflow: hidden
+                
 
             .term
-                font-size: 1.2rem
-                font-weight: 700
+                @include fontConfig(1.2rem, 700, $dark-color)
                 
                 strong
-                    font-size: 1.8rem
-                    font-weight: 700
-                    color: $attention-color
+                    @include fontConfig(1.8rem, 700, $attention-color)
+
+                small
+                    @include fontConfig(1rem, 400, $attention-color)
+                    margin-left: 13px
+
 
             .complete
+                @include fontConfig(1.6rem, 700, $secondary-color)
                 width: 100%
                 background: none
                 border: 1px solid $secondary-color
                 border-radius: 8px
-
-                font-size: 1.6rem
-                font-weight: 700
-                color: $secondary-color
                 
                 margin: 7px 0 6px
                 
                 transition: .6s
+                cursor: pointer
 
                 &:hover
                     background: $secondary-color
                     color: $white-color
 
             .included
+                margin-top: 5px
                 font-size: 1rem
 
-        .see-more
-            background: $purple-color
-            border: none
-            border-radius: 8px
+.see-more
+    @include fontConfig(1.6rem, 600, $white-color)
+    background: $purple-color
+    border: none
+    border-radius: 8px
 
-            padding: 10px 32px
-            margin-top: 23px
+    padding: 10px 32px
+    margin-top: 23px
 
-            font-size: 1.6rem
-            font-weight: 600
-            color: $white-color
-            letter-spacing: .1rem
-            text-transform: uppercase
+    letter-spacing: .1rem
+    text-transform: uppercase
+                            
+    transition: .6s
+    cursor: pointer
+
+    &:hover
+        background: $secondary-color
 

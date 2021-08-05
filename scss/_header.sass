@@ -3,11 +3,9 @@ header
     width: 100%
     .title
         @include flexbox(column, center, center)   
-        background: $secondary-color 
-        height: 170px
-        font-size: 2.4rem
-        font-weight: 800
-        color: $white-color
+        @include fontConfig(2.4rem, 800, $white-color)
+        height: 160px
+        background: $secondary-color
 
         &::before
             content: ''
@@ -21,12 +19,15 @@ header
 
 
 .subtitle
+    @include fontConfig(1.6rem, 400, $secondary-color)
     width: 75.5%
-    font-size: 1.6rem
-    font-weight: 400
-    color: $secondary-color
     text-align: center
 
-    margin-top: 20px,
+    position: absolute
+    bottom: -40%
+    
+    left: 50%;
+    transform: translateX(-50%);
+
     
 
